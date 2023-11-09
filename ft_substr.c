@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:47:38 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/09 16:16:22 by mapale           ###   ########.fr       */
+/*   Created: 2023/11/08 16:29:48 by mapale            #+#    #+#             */
+/*   Updated: 2023/11/08 16:37:07 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+	int		i;
+	char	*tab;
 
+	i = 0;
+	tab = (char *)malloc(sizeof(char) * len);
+	if (!tab)
+		return (NULL);
+	while (i <= len)
+	{
+		tab[i] = s[start];
+		start++;
+		i++;
+	}
+	return (tab);
+}

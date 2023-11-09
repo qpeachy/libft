@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:47:38 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/09 16:16:22 by mapale           ###   ########.fr       */
+/*   Created: 2023/11/08 13:43:53 by mapale            #+#    #+#             */
+/*   Updated: 2023/11/08 14:14:26 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+	int i;
+	int j;
+	int res;
 
+	i = 0;
+	res = 0;
+	if (little[0] == '\0')
+		return (big);
+	while (i < len)
+	{
+		j = 0;
+		res = i;
+		while (little[j] && big[i] == little[j] && i < len)
+		{
+			i++;
+			j++;
+		}
+		if (little[j] == '\0')
+			return(big + res);
+		i++;
+	}
+	return (NULL);
+}

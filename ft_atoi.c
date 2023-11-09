@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:47:38 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/09 16:16:22 by mapale           ###   ########.fr       */
+/*   Created: 2023/11/08 14:15:41 by mapale            #+#    #+#             */
+/*   Updated: 2023/11/08 14:47:16 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isdigit(int c)
+int	ft_atoi(const char *nptr)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+	int	result;
+	int pole;
+	int	i;
 
+	result = 0;
+	pole = 1;
+	i = i;
+	while (nptr[i] == ' ' || (nptr[i] >= '\a' && nptr[i] <= '\r'))
+		i++;
+	while (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			pole *= -1;
+			i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = result + (nptr[i] - '0') * 10;
+	}
+	return (result * pole);
+}

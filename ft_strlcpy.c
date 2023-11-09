@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 10:07:15 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/08 10:58:50 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/08 14:07:30 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t  ft_strlcpy(char *dest, const char *src, size_t size)
 {
-    int i;
+    int	i;
 
     i = 0;
     if (size < 0)
