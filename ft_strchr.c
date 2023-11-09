@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 11:50:05 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/08 11:58:49 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/09 17:44:23 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 char *ft_strchr(const char *s, int c)
 {
-    while (*s)
+	int	i;
+
+	i = 0;
+    while (s[i])
     {
-        if (s == c)
-            return (s);
-        s++;
+        if (s[i] == c)
+            return ((char *)s + i);
+        i++;
     }
     return (NULL);
 }

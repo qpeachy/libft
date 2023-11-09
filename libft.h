@@ -1,8 +1,9 @@
 #ifndef LIBFT_H
-#define LBTF_H
+# define LIBTF_H
 
 #include <stddef.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);

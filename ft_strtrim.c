@@ -6,13 +6,15 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:52:44 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/08 17:45:52 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/09 17:50:50 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	inset(char c, char const *set)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])

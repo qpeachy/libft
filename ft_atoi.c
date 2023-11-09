@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:15:41 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/08 14:47:16 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/09 17:28:37 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int	ft_atoi(const char *nptr)
 
 	result = 0;
 	pole = 1;
-	i = i;
+	i = 0;
 	while (nptr[i] == ' ' || (nptr[i] >= '\a' && nptr[i] <= '\r'))
 		i++;
 	while (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
 			pole *= -1;
-			i++;
+		i++;
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{

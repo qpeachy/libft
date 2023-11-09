@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:37:58 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/08 16:43:49 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/09 17:45:56 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
-	int		size;
 	char	*tab;
 
 	i = 0;
 	j = 0;
-	size = ft_strlen(s1) + ft_strlen(s2);
-	tab = (char *)malloc(sizeof(char) * size + 1);
+	tab = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!tab)
 		return (NULL);
 	while (s1[i])
@@ -39,4 +37,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	tab[i] = '\0';
+	return (tab);
 }

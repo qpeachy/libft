@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:27:41 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/08 13:35:54 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/09 17:33:35 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void    *memchr(const void *s, int c, size_t n)
 {
-    char    *tmp;
-    int     i;
+    char	*tmp;
+	size_t		i;
 
     tmp = (char *)s;
     i = 0;
-    while(tmp[i])
+    while(i < n)
     {
         if(tmp[i] == c)
-            return(&s[i]);
+            return(&tmp[i]);
         i++;
     }
     return (NULL);
