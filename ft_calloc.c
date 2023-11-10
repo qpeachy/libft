@@ -6,13 +6,13 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:48:58 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/08 15:38:13 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/10 16:15:00 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char *tab;
 

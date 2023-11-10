@@ -6,18 +6,33 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:16:19 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/09 17:48:49 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/10 15:12:47 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+
+#include <stdio.h>
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
     size_t	i;
 
     i = 0;
-    while (s1[i] && s2[i] && i <= n)
-        i++;
-    return (s1[i] - s2[i]);
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
+		i++;
+	if (i == n)
+		return (0);
+	return (s1[i] - s2[i]);
 }
+
+/*
+#include <string.h>
+int	main(void)
+{
+	printf("TEST: %d\n", strncmp("1234", "1235", 3));
+	printf("TEST: %d\n", ft_strncmp("1234", "1235", 3));
+}
+*/
