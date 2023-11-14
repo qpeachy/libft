@@ -1,18 +1,18 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:43:53 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/09 17:49:49 by mapale           ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   ft_strnstr.c									   :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: mapale <mapale@42.fr>					  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2023/11/08 13:43:53 by mapale			#+#	#+#			 */
+/*   Updated: 2023/11/09 17:49:49 by mapale		   ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t i;
 	size_t j;
@@ -20,9 +20,11 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	res = 0;
-	if (little[0] == '\0')
+	if (len <= 0 || !*big)
+		return (NULL);
+	if (!*little)
 		return ((char *)big);
-	while (i < len)
+	while (big[i])
 	{
 		j = 0;
 		res = i;
@@ -35,5 +37,15 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
 			return((char *)big + res);
 		i++;
 	}
+
 	return (NULL);
 }
+
+/* #include <stdio.h>
+#include <bsd/string.h>
+int main ()
+{
+	const char l[10] = "duck u";
+	const char b[100] = " ";
+	ft_strnstr(b, l, -1);
+} */

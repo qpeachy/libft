@@ -1,35 +1,18 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 17:46:04 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/09 13:32:31 by mapale           ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   ft_split.c										 :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: mapale <mapale@42.fr>					  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2023/11/08 17:46:04 by mapale			#+#	#+#			 */
+/*   Updated: 2023/11/09 13:32:31 by mapale		   ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_dup(char const *s, int start, int stop)
-{
-	char	*tab;
-	int		i;
-
-	tab = (char *)malloc(sizeof(char) * (stop - start) + 1);
-	if (!tab)
-		return (NULL);
-	i = 0;
-	while (start < stop)
-	{
-		tab[i] = s[start];
-		start++;
-		i++;
-	}
-	tab[i] = '\0';
-	return (tab);
-}
+#include <stdio.h>
 
 int	how_many(char const *s, char c)
 {
@@ -53,6 +36,7 @@ int	how_many(char const *s, char c)
 		}
 		i++;
 	}
+	//printf("how many: %d\n", word);
 	return (word);
 }
 
@@ -60,32 +44,49 @@ char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		start;
-	int		stop;
 	int 	size;
 	int		i;
 	int		j;
 
 	i = 0;
-	j = -1;
+	j = 0;
 	size = how_many(s, c);
 	tab = (char **)malloc(sizeof(char *) * size);
 	if(!tab)
 		return (NULL);
-	while (j++ < size)
+	while (j < size)
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		start = i;
-		while (s[i] != c)
+		while (s[i] && s[i] != c)
 			i++;
-		stop = i;
-		tab[j] = ft_dup(s, start, stop);
+		tab[j] = ft_substr(s, start, i - start);
 		i++;
+		j++;
 	}
+	tab[j] = NULL;
 	return (tab);
 }
-
 /* #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int	main()
+{
+	int		i;
+
+	char **hoes = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+	i = 0;
+	while (hoes[i])
+	{
+		printf("smd line : %s - length: %ld\n", hoes[i], strlen(hoes[i]));
+		i++;
+	}
+	return 0;
+}  */ 
+
+/*
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 int	main(int argc, char **argv)

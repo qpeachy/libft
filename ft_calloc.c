@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:48:58 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/10 16:15:00 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/13 18:28:20 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char *tab;
+	void	*tab;
+	size_t		i;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
+	i = 0;
 	tab = malloc(nmemb * size);
-	if (!tab)
+	if (!tab || size * nmemb == 65535)
 		return (NULL);
+	while (i < nmemb * size)
+	{
+		((char *)tab)[i] = 0;
+		i++;
+	}
 	return (tab);
 }
