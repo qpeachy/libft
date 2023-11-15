@@ -17,12 +17,12 @@ char	*ft_strdup(char *s)
 	int		i;
 	int		size;
 	char	*tab;
-	
+
 	i = 0;
 	size = ft_strlen(s) + 1;
 	tab = (char *)malloc(sizeof(char) * (size));
 	if (!tab)
-		return ((char *)NULL);
+		return ((char *) NULL);
 	while (s[i])
 	{
 		tab[i] = s[i];
@@ -31,4 +31,3 @@ char	*ft_strdup(char *s)
 	tab[i] = '\0';
 	return (tab);
 }
-

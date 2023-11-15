@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME			=	libft.a
-CC				=	gcc
+CC				=	cc
 CFLAGS			=	-Wall -Werror -Wextra
 HEADER_FILE		=	libft.h
 SRCS			=	ft_atoi.c		\
@@ -49,22 +49,36 @@ SRCS			=	ft_atoi.c		\
 					ft_tolower.c	\
 					ft_toupper.c	\
 
+SRCS_BONUS		=	ft_lstnew.c			\
+					ft_lstsize.c		\
+					ft_lstlast.c		\
+					ft_lstadd_front.c	\
+					ft_lstadd_back.c	\
+					ft_lstdelone.c		\
+					ft_lstclear.c		\
+					ft_lstiter.c		\
+					ft_lstmap.c			\
+
 OBJS			=	$(SRCS:.c=.o)
+OBJS_BONUS		=	$(SRCS_BONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c $(HEADER_FILE)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus:
+	$(MAKE) $(NAME) SRCS="$(SRCS) $(SRCS_BONUS)"
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

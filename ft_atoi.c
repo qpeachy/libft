@@ -16,13 +16,13 @@
 int	ft_atoi(const char *nptr)
 {
 	int	result;
-	int pole;
+	int	pole;
 	int	i;
 
 	result = 0;
 	pole = 1;
 	i = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= '\a' && nptr[i] <= '\r'))
+	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
@@ -37,13 +37,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * pole);
 }
-
-/*#include <stdio.h>
-#include <stdlib.h>
-int main (int argc, char **argv)
-{
-	if (argc != 2)
-		return (0);
-	printf("real fct: %d, crtd fct: %d", atoi(argv[1]), ft_atoi(argv[1]));
-	return (argc * 0);
-}*/

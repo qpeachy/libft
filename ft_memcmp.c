@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*tmp_s1;
 	unsigned char	*tmp_s2;
@@ -23,20 +23,11 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 	tmp_s2 = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while(i < n)
+	while (i < n)
 	{
 		if (tmp_s1[i] != tmp_s2[i])
 			return (tmp_s1[i] - tmp_s2[i]);
 		i++;
 	}
 	return (0);
-}/* 
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	char s[] = {-128, 0, 127, 0};
-		char sCpy[] = {-128, 0, 127, 0};
-	printf("copy fct: %d\nreal fct: %d\n", ft_memcmp(s, sCpy, 4),memcmp(s, sCpy, 4));
-	return 0;
-} */
+}

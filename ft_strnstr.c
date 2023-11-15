@@ -14,38 +14,35 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t i;
-	size_t j;
-	size_t res;
+	size_t	i;
+	size_t	l_size;
 
 	i = 0;
-	res = 0;
-	if (len <= 0 || !*big)
-		return (NULL);
+	l_size = ft_strlen(little);
 	if (!*little)
 		return ((char *)big);
-	while (big[i])
+	if (!*big)
+		return (NULL);
+	while (big[i] && i < len)
 	{
-		j = 0;
-		res = i;
-		while (little[j] && big[i] == little[j] && i < len)
+		if (ft_strncmp(big + i, little, l_size) == 0)
 		{
-			i++;
-			j++;
+			if (i + l_size > len)
+				return (NULL);
+			return ((char *)big + i);
 		}
-		if (little[j] == '\0')
-			return((char *)big + res);
 		i++;
 	}
-
 	return (NULL);
 }
 
-/* #include <stdio.h>
-#include <bsd/string.h>
+/* #include <bsd/string.h>
+#include <stdio.h>
+
 int main ()
 {
-	const char l[10] = "duck u";
-	const char b[100] = " ";
-	ft_strnstr(b, l, -1);
+	char haystack[30] = "aaabcabcd";
+	char *i3 = strnstr(haystack,  "abcd", 9);
+ 	char *i4 = ft_strnstr(haystack, "abcd", 9); 
+	printf("TEST 10\ni1 real fcnt: %s\ni2 creat fcnt: %s\n\n", i3, i4);
 } */

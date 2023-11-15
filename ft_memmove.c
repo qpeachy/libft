@@ -14,23 +14,17 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char *tmp_dest;
-	char *tmp_src;
-	size_t i;
+	char	*tmp_dest;
+	char	*tmp_src;
+	size_t	i;
 
 	tmp_dest = (char *)dest;
 	tmp_src = (char *)src;
 	if (dest == NULL && src == NULL)
 		return (NULL);
 	if (src < dest)
-	{
-		i = n;
-		while (i > 0)
-		{
-			tmp_dest[i - 1] = tmp_src[i - 1];
-			i--;
-		}
-	}
+		while (n-- > 0)
+			tmp_dest[n] = tmp_src[n];
 	else
 	{
 		i = 0;

@@ -19,6 +19,8 @@ int	count_nbr(int n)
 	int		count;
 
 	count = 0;
+	if (n == 0)
+		count++;
 	if (n < 0)
 	{
 		n *= -1;
@@ -34,8 +36,8 @@ int	count_nbr(int n)
 
 void	rev_tab(char *s)
 {
-	int 	i;
-	int 	j;
+	int		i;
+	int		j;
 	int		size;
 	char	tmp;
 
@@ -57,29 +59,27 @@ void	rev_tab(char *s)
 
 char	*ft_itoa(int n)
 {
-	char	*tab;
-	int		i;
+	char		*tab;
+	int			i;
+	long int	nn;
 
 	i = 0;
 	tab = (char *)malloc(sizeof(char) * count_nbr(n) + 1);
 	if (!tab)
 		return (NULL);
 	if (n < 0)
-	{
-		tab[i] = '-';
-		n *= -1;
-		i++;
-	}
-	while (n > 0)
-	{
-		tab[i] = n%10 + '0';
-		i++;
-		n/=10;
-	}
-	tab[i] = '\0';
-	if (tab[0] == '-')
-		rev_tab(tab + 1);
+		nn = (long int)n * -1;
 	else
-		rev_tab(tab);
+		nn = (long int)n;
+	while (nn > 9)
+	{
+		tab[i++] = nn % 10 + '0';
+		nn /= 10;
+	}
+	tab[i++] = nn + '0';
+	if (n < 0)
+		tab[i++] = '-';
+	tab[i] = '\0';
+	rev_tab(tab);
 	return (tab);
 }

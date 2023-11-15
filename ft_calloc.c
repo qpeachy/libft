@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:48:58 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/13 18:28:20 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/15 16:36:11 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*tab;
+	void		*tab;
 	size_t		i;
 
 	i = 0;

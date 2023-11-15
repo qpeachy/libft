@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	int oc;
+	int	i;
+	int	oc;
 
 	i = 0;
 	oc = 0;
@@ -23,9 +23,9 @@ char	*ft_strrchr(const char *s, int c)
 		return (NULL);
 	if ((unsigned char)c == '\0')
 	{
-		while(s[i])
+		while (s[i])
 			i++;
-		return((char *)s + i);
+		return ((char *)s + i);
 	}
 	while (s[i])
 	{

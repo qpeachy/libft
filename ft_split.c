@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-#include <stdio.h>
-
 int	how_many(char const *s, char c)
 {
 	int	i;
@@ -36,7 +34,6 @@ int	how_many(char const *s, char c)
 		}
 		i++;
 	}
-	//printf("how many: %d\n", word);
 	return (word);
 }
 
@@ -44,15 +41,15 @@ char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		start;
-	int 	size;
+	int		size;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
 	size = how_many(s, c);
-	tab = (char **)malloc(sizeof(char *) * size);
-	if(!tab)
+	tab = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!tab)
 		return (NULL);
 	while (j < size)
 	{
@@ -68,40 +65,3 @@ char	**ft_split(char const *s, char c)
 	tab[j] = NULL;
 	return (tab);
 }
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int	main()
-{
-	int		i;
-
-	char **hoes = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-	i = 0;
-	while (hoes[i])
-	{
-		printf("smd line : %s - length: %ld\n", hoes[i], strlen(hoes[i]));
-		i++;
-	}
-	return 0;
-}  */ 
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int	main(int argc, char **argv)
-{
-	char 	**hoe;
-	int		i;
-
-	if (argc != 4)
-		return 0;
-	hoe = ft_split(argv[1], argv[2][0]);
-	i = 0;
-	while (i < atoi(argv[3]))
-	{
-		printf("smd line : %s\n", hoe[i]);
-		i++;
-	}
-	return 0;
-} */

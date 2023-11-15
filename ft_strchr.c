@@ -19,9 +19,9 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	if ((char)c == '\0')
 	{
-		while(s[i])
+		while (s[i])
 			i++;
-		return((char *)s + i);
+		return ((char *)s + i);
 	}
 	while (s[i])
 	{
