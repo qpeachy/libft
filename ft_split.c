@@ -75,7 +75,7 @@ char	**fill_tab(char **tab, char const *s, int size, char c)
 		tab[j] = ft_substr(s, start, i - start);
 		if (!(tab[j]))
 		{
-			ft_free(tab, size - j);
+			ft_free(tab, j);
 			return (NULL);
 		}
 		i++;

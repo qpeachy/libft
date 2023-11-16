@@ -32,8 +32,6 @@ int	ft_atoi(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (result != ((result * 10 + (pole * (nptr[i] - '0'))) / 10))
-			return ((int)((pole + 1) / 2 / -1));
 		result = (result * 10) + (nptr[i] - '0');
 		i++;
 	}
