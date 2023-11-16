@@ -37,20 +37,34 @@ int	how_many(char const *s, char c)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+int	in_set(char c, char set)
 {
-	char	**tab;
-	int		start;
-	int		size;
-	int		i;
-	int		j;
+	if (c == set)
+		return (1);
+	return (0);
+}
+
+void	ft_free(char **tab, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
+char	**fill_tab(char **tab, char const *s, int size, char c)
+{
+	int	i;
+	int	j;
+	int	start;
 
 	i = 0;
 	j = 0;
-	size = how_many(s, c);
-	tab = (char **)malloc(sizeof(char *) * (size + 1));
-	if (!tab)
-		return (NULL);
 	while (j < size)
 	{
 		while (s[i] && s[i] == c)
@@ -59,9 +73,29 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		tab[j] = ft_substr(s, start, i - start);
+		if (!(tab[j]))
+		{
+			ft_free(tab, size - j);
+			return (NULL);
+		}
 		i++;
 		j++;
 	}
 	tab[j] = NULL;
+	return (tab);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**tab;
+	int		size;
+
+	size = how_many(s, c);
+	tab = (char **)malloc(sizeof(char *) * (size + 1));
+	if (!tab)
+		return (NULL);
+	tab = fill_tab(tab, s, size, c);
+	if (!tab)
+		return (NULL);
 	return (tab);
 }

@@ -18,8 +18,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t		i;
 
 	i = 0;
+	if (size > 0 && nmemb > 2147483647 / size)
+		return (NULL);
 	tab = malloc(nmemb * size);
-	if (!tab || size * nmemb == 65535)
+	if (!tab)
 		return (NULL);
 	while (i < nmemb * size)
 	{
