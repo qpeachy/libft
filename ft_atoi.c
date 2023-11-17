@@ -13,6 +13,15 @@
 #include "libft.h"
 #include <stdio.h>
 
+int	verif_output(int n)
+{
+	if (n > INT_MAX)
+		return (-1);
+	if (n < INT_MIN)
+		return (0);
+	return (n);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	int	result;
@@ -35,5 +44,5 @@ int	ft_atoi(const char *nptr)
 		result = (result * 10) + (nptr[i] - '0');
 		i++;
 	}
-	return (result * pole);
+	return (verif_output(result * pole));
 }

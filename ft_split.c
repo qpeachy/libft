@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	how_many(char const *s, char c)
+static int	how_many(char const *s, char c)
 {
 	int	i;
 	int	word;
@@ -37,14 +37,7 @@ int	how_many(char const *s, char c)
 	return (word);
 }
 
-int	in_set(char c, char set)
-{
-	if (c == set)
-		return (1);
-	return (0);
-}
-
-void	ft_free(char **tab, int size)
+static void	ft_free(char **tab, int size)
 {
 	int	i;
 
@@ -57,7 +50,7 @@ void	ft_free(char **tab, int size)
 	free(tab);
 }
 
-char	**fill_tab(char **tab, char const *s, int size, char c)
+static char	**fill_tab(char **tab, char const *s, int size, char c)
 {
 	int	i;
 	int	j;

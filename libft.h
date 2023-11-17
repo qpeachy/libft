@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:30:01 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/15 16:26:37 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/17 14:53:35 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
