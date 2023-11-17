@@ -35,14 +35,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-/* #include <bsd/string.h>
-#include <stdio.h>
-
-int main ()
-{
-	char haystack[30] = "aaabcabcd";
-	char *i3 = strnstr(haystack,  "abcd", 9);
- 	char *i4 = ft_strnstr(haystack, "abcd", 9); 
-	printf("TEST 10\ni1 real fcnt: %s\ni2 creat fcnt: %s\n\n", i3, i4);
-} */

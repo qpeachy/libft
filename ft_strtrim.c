@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	inset(char c, char const *set)
+static int	inset(char c, char const *set)
 {
 	size_t	i;
 
@@ -54,11 +54,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	tab[i] = '\0';
 	return (tab);
 }
-/* 
- #include <stdio.h>
-int main()
-{
-	char *s1 = "  \t \t \n   \n\n\n\t";
- 	char *ret = ft_strtrim(s1, " \n\t");
-	printf("%s", ret);
-} */

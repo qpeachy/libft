@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	verif_output(int n)
+static int	verif_output(int n)
 {
 	if (n > INT_MAX)
 		return (-1);
