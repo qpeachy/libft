@@ -6,7 +6,7 @@
 /*   By: mapale <mapale@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 14:48:58 by mapale            #+#    #+#             */
-/*   Updated: 2023/11/15 16:36:11 by mapale           ###   ########.fr       */
+/*   Updated: 2023/11/22 14:04:22 by mapale           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,14 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		i++;
 	}
 	return (tab);
+}
+
+#include <stdio.h>
+#include <string.h>
+int main(int ac, char **ar)
+{
+	(void)ac;
+	(void)ar;
+	printf("%s\n", (char *)ft_calloc(atoi(ar[1]), atoi(ar[2])));
+	return 0;
 }
